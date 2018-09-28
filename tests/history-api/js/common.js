@@ -2,14 +2,12 @@ $(function()
 {
     var undefined,
         fn      = {},
-        title   = document.title,
         $links  = $('a[data-history]'),
         $output = $('#output');
 
-    fn.load = function(data)
+    fn.load = function(href)
     {
-        data           = data ? data : {};
-        document.title = data.title ? data.title : title;
+        console.log('href', href);
 
         $links
             .removeClass('active')
@@ -17,41 +15,46 @@ $(function()
             .closest('li')
             .removeClass('active');
 
-        if (data.href) {
-            $('a[data-history][href="' + data.href + '"]')
+        if (href) {
+            $('a[data-history][href="' + href + '"]')
                 .addClass('active')
                 .closest('li')
                 .addClass('active');
+        } else {
+            href = '';
         }
 
-        $output.text(data.text ? data.text : 'default');
+        $.post('./data.php', {route: href})
+            .done(function(response, status, xhr)
+            {
+                console.log('response', response);
+
+                document.title = response.title;
+
+                $output.text(response.text);
+            })
+            .fail(function(xhr, status, errorThrown)
+            {
+                document.title = xhr.status + ' ' + xhr.statusText;
+
+                $output.text(xhr.status + ' ' + xhr.statusText + ' - ' + xhr.responseText);
+            });
     };
 
     $links.on('click', function(e)
     {
         e.preventDefault();
 
-        var $this = $(this),
-            data  = {};
+        var href = $(this).attr('href');
 
-        data.href  = $this.attr('href');
-        data.text  = $this.text();
-        data.title = title + ' - ' + data.text;
-
-        console.log('history.pushState.data', data);
-
-        history.pushState(data, data.title, data.href);
-        fn.load(data);
+        history.pushState(href, href, href);
+        fn.load(href);
     });
 
     $(window).on('popstate', function(e)
     {
-        var state = e.originalEvent.state;
-
-        console.log('window.popstate.state', state);
-
-        if (null !== state) {
-            fn.load(state);
+        if (null !== e.originalEvent.state) {
+            fn.load(e.originalEvent.state);
         } else {
             fn.load();
         }

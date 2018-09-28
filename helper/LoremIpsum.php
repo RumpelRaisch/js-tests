@@ -1,5 +1,6 @@
 <?php
 /**
+ * LoremIpsum class
  * @author Rainer Schulz
  */
 class LoremIpsum

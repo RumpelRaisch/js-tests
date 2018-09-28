@@ -1,0 +1,30 @@
+{
+  "": {
+    "title": "default",
+    "text" : "default"
+  },
+  "one.html": {
+    "title": "one",
+    "text" : "one"
+  },
+  "two.html": {
+    "title": "two",
+    "text" : "two"
+  },
+  "three.html": {
+    "title": "three",
+    "text" : "three"
+  },
+  "un.html": {
+    "title": "un",
+    "text" : "un"
+  },
+  "dos.html": {
+    "title": "dos",
+    "text" : "dos"
+  },
+  "tres.html": {
+    "title": "tres",
+    "text" : "tres"
+  }
+}

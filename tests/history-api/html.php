@@ -1,3 +1,5 @@
+<?php if (false === defined('HTTP_BASE')) {return;} ?>
+<?php require '../../helper/LoremIpsum.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Rainer Schulz">
 
-    <title>History API</title>
+    <title><?php echo $data['title']; ?></title>
 
     <link href="<?php echo HTTP_BASE; ?>../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo HTTP_BASE; ?>css/bootstrap.darkly.min.css" rel="stylesheet">
@@ -24,20 +26,20 @@
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" data-history href="one.html">one</a>
+            <a class="nav-link" data-history href="<?php echo HTTP_BASE; ?>one.html">one</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-history href="two.html">two</a>
+            <a class="nav-link" data-history href="<?php echo HTTP_BASE; ?>two.html">two</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-history href="three.html">three</a>
+            <a class="nav-link" data-history href="<?php echo HTTP_BASE; ?>three.html">three</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">esp</a>
             <div class="dropdown-menu" aria-labelledby="dropdown">
-              <a class="dropdown-item" data-history href="un.html">un</a>
-              <a class="dropdown-item" data-history href="dos.html">dos</a>
-              <a class="dropdown-item" data-history href="tres.html">tres</a>
+              <a class="dropdown-item" data-history href="<?php echo HTTP_BASE; ?>un.html">un</a>
+              <a class="dropdown-item" data-history href="<?php echo HTTP_BASE; ?>dos.html">dos</a>
+              <a class="dropdown-item" data-history href="<?php echo HTTP_BASE; ?>tres.html">tres</a>
             </div>
           </li>
         </ul>
@@ -62,7 +64,7 @@
           <div class="col-md-12">
             <div class="card bg-primary mb-4">
               <div class="card-body">
-                <pre class="card-text" id="output">default</pre>
+                <pre class="card-text" id="output"><?php echo $data['text']; ?></pre>
               </div>
             </div>
           </div>
@@ -127,7 +129,7 @@
       <p>&copy; Company 2017-2018</p>
     </footer>
 
-    <script src="<?php echo HTTP_BASE; ?>../../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="<?php echo HTTP_BASE; ?>../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="<?php echo HTTP_BASE; ?>../../node_modules/tooltip.js/dist/umd/tooltip.min.js"></script>
     <script src="<?php echo HTTP_BASE; ?>../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

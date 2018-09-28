@@ -1,31 +1,23 @@
 <?php
-$s = '';
+require './config.php';
+require './Router.php';
 
-if (
-    false === empty($_SERVER['HTTPS']) &&
-    'off' !== $_SERVER['HTTPS'] ||
-    443   ==  $_SERVER['SERVER_PORT']
-) {
-    $s = 's';
+$data     = ['title' => '', 'text' => '',];
+$router   = Router::getInstance();
+$response = $router
+    ->setRoutes(json_decode(file_get_contents('./routes.json'), true))
+    ->handle(ROUTE);
+$router   = null;
+
+if (200 === $response['status']) {
+    $data = $response['data'];
+} else {
+    http_response_code($response['status']);
+
+    $data['title'] = $response['status'] . ' ' . $response['statusText'];
+    $data['text']  = $response['status'] . ' ' . $response['statusText'];
 }
 
-define(
-    'HTTP_BASE',
-    "http{$s}://{$_SERVER['HTTP_HOST']}" . pathinfo($_SERVER['SCRIPT_NAME'])['dirname'] . '/'
-);
+unset($router, $response);
 
-define(
-    'DEBUG',
-    [
-        'base'     => HTTP_BASE,
-        '$_GET'    => $_GET,
-        '$_POST'   => $_POST,
-        '$_COOKIE' => $_COOKIE,
-        '$_FILES'  => $_FILES,
-        '$_SERVER' => $_SERVER,
-        '$_ENV'    => $_ENV,
-    ]
-);
-
-require '../../helper/LoremIpsum.php';
-require 'html.php';
+require './html.php';
