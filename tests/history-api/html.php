@@ -8,16 +8,16 @@
 
     <title>History API</title>
 
-    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.darkly.min.css" rel="stylesheet">
-    <link href="../../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
+    <link href="<?php echo HTTP_BASE; ?>../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo HTTP_BASE; ?>css/bootstrap.darkly.min.css" rel="stylesheet">
+    <link href="<?php echo HTTP_BASE; ?>../../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link href="<?php echo HTTP_BASE; ?>css/common.css" rel="stylesheet">
   </head>
 
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-      <a class="navbar-brand" href="#"><i class="fa fa-bug"></i></a>
+      <a class="navbar-brand" href="<?php echo HTTP_BASE; ?>"><i class="fa fa-bug"></i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -66,6 +66,14 @@
               </div>
             </div>
           </div>
+            <div class="col-md-12">
+              <div class="card bg-secondary mb-4">
+                <div class="card-body">
+                  <h4 class="card-title">debug</h4>
+                  <pre class="card-text"><?php print_r(DEBUG); ?></pre>
+                </div>
+              </div>
+            </div>
         </div>
         <div class="row">
           <div class="col-md-4">
@@ -119,10 +127,10 @@
       <p>&copy; Company 2017-2018</p>
     </footer>
 
-    <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../node_modules/tooltip.js/dist/umd/tooltip.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/common.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../../node_modules/tooltip.js/dist/umd/tooltip.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>js/common.js"></script>
   </body>
 </html>
