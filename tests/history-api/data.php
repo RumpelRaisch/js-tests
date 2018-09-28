@@ -2,7 +2,7 @@
 require './config.php';
 require './Router.php';
 
-if (true === empty($_POST['route'])) {
+if (false === isset($_POST['route'])) {
     return;
 }
 
