@@ -10,9 +10,9 @@
 
     <title><?php echo $data['title']; ?></title>
 
-    <link href="<?php echo HTTP_BASE; ?>../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo HTTP_BASE; ?>../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo HTTP_BASE; ?>css/bootstrap.darkly.min.css" rel="stylesheet">
-    <link href="<?php echo HTTP_BASE; ?>../../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link href="<?php echo HTTP_BASE; ?>../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
     <link href="<?php echo HTTP_BASE; ?>css/common.css" rel="stylesheet">
   </head>
 
@@ -129,10 +129,10 @@
       <p>&copy; Company 2017-2018</p>
     </footer>
 
-    <script src="<?php echo HTTP_BASE; ?>../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="<?php echo HTTP_BASE; ?>../../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="<?php echo HTTP_BASE; ?>../../node_modules/tooltip.js/dist/umd/tooltip.min.js"></script>
-    <script src="<?php echo HTTP_BASE; ?>../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../node_modules/tooltip.js/dist/umd/tooltip.min.js"></script>
+    <script src="<?php echo HTTP_BASE; ?>../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?php echo HTTP_BASE; ?>js/common.js"></script>
   </body>
 </html>
