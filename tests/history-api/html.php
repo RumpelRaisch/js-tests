@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Rainer Schulz">
+    <link rel="icon" href="<?php echo HTTP_BASE; ?>favicon.ico">
 
     <title><?php echo $data['title']; ?></title>
 
